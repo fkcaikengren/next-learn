@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -15,7 +16,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <header className='flex items-center'>
+          <div className="flex items-center justify-between font-mono px-4 py-1 hover:text-blue-300">
+            <Link href="/">Home</Link>
+          </div>
+          <div className="flex items-center justify-between font-mono px-4 py-1  hover:text-blue-300">
+            <Link href="/dashboard">Dashboard</Link>
+          </div>
+        </header>
+        {children}
+      </body>
     </html>
   )
 }
